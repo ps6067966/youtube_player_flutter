@@ -64,7 +64,7 @@ class _MobileYoutubePlayerState extends State<RawYoutubePlayer>
     _webController = Completer();
     controller = widget.controller;
     _value = controller.value;
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -141,7 +141,7 @@ class _MobileYoutubePlayerState extends State<RawYoutubePlayer>
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -291,7 +291,7 @@ class _MobileYoutubePlayerState extends State<RawYoutubePlayer>
       case 'emb_logo':
       case 'social':
       case 'wl_button':
-        url_launcher.launch(uri.toString());
+        url_launcher.launchUrl(uri);
         break;
     }
 
